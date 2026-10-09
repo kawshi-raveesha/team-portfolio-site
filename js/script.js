@@ -60,3 +60,34 @@ function typeEffect() {
 if (typingText) {
     typeEffect();
 }
+
+
+   //MOBILE MENU
+
+if (menuToggle && navbar) {
+    menuToggle.addEventListener("click", function () {
+        navbar.classList.toggle("show");
+
+        if (navbar.classList.contains("show")) {
+            menuToggle.textContent = "✕";
+        } else {
+            menuToggle.textContent = "☰";
+        }
+    });
+}
+
+   //CLOSE MOBILE MENU AFTER CLICK
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+        if (navbar) {
+            navbar.classList.remove("show");
+        }
+
+        if (menuToggle) {
+            menuToggle.textContent = "☰";
+        }
+    });
+});
