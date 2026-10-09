@@ -236,3 +236,4 @@ if (contactForm) {
 if (year) {
     year.textContent = new Date().getFullYear();
 }
+          
