@@ -121,3 +121,118 @@ if (savedTheme === "dark") {
         themeToggle.textContent = "☀";
     }
 }
+
+//CTIVE NAVIGATION LINK
+
+const sections = document.querySelectorAll("main section");
+
+function updateActiveLink() {
+    let currentSection = "";
+
+    sections.forEach(function (section) {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+            currentSection = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(function (link) {
+        link.classList.remove("active");
+
+        const target = link.getAttribute("href");
+
+        if (currentSection && target === "#" + currentSection) {
+            link.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", updateActiveLink);
+window.addEventListener("load", updateActiveLink);
+
+
+//FORM VALIDATION
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name")?.value.trim() || "";
+        const email = document.getElementById("email")?.value.trim() || "";
+        const message = document.getElementById("message")?.value.trim() || "";
+
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+        const messageError = document.getElementById("messageError");
+        const formStatus = document.getElementById("formStatus");
+
+        if (nameError) nameError.textContent = "";
+        if (emailError) emailError.textContent = "";
+        if (messageError) messageError.textContent = "";
+
+        if (formStatus) {
+            formStatus.textContent = "";
+            formStatus.classList.remove("success");
+        }
+
+        let valid = true;
+
+        if (name === "") {
+            if (nameError) nameError.textContent = "Please enter your name.";
+            valid = false;
+        } else if (name.length < 2) {
+            if (nameError) {
+                nameError.textContent =
+                    "Name must contain at least 2 characters.";
+            }
+            valid = false;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (email === "") {
+            if (emailError) emailError.textContent = "Please enter your email.";
+            valid = false;
+        } else if (!emailPattern.test(email)) {
+            if (emailError) {
+                emailError.textContent =
+                    "Please enter a valid email address.";
+            }
+            valid = false;
+        }
+
+        if (message === "") {
+            if (messageError) {
+                messageError.textContent = "Please enter your message.";
+            }
+            valid = false;
+        } else if (message.length < 10) {
+            if (messageError) {
+                messageError.textContent =
+                    "Message must contain at least 10 characters.";
+            }
+            valid = false;
+        }
+
+        if (valid) {
+            if (formStatus) {
+                formStatus.textContent =
+                    "Thanks! Your message was sent.";
+                formStatus.classList.add("success");
+            }
+
+            contactForm.reset();
+        }
+    });
+}
+
+//FOOTER YEAR
+
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
