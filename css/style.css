@@ -25,22 +25,17 @@
 }
 
 
-/* DARK MODE VARIABLES */
-
+/* Dark Mode Variables */
 body.dark-mode {
+    --background: #17151d;
+    --section-bg: #211d29;
+    --card-bg: #292431;
 
-    --background: #121212;
-    --section-bg: #1b1b1b;
+    --text: #f4f0fa;
+    --text-light: #c0b8ca;
 
-    --card-bg: #242424;
-
-    --text: #f5f5f5;
-    --text-light: #bdbdbd;
-
-    --border: #3a3a3a;
-
-    --shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3);
+    --border: #403849;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 
