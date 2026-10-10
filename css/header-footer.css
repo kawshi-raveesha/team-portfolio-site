@@ -1,1 +1,19 @@
 /* MEMBER 4: header, navigation and footer styles */
+.footer-logo {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-logo:hover {
+    color: #b996e8;
+}
+
+.nav-link:focus-visible,
+.theme-btn:focus-visible,
+.menu-btn:focus-visible,
+.back-top:focus-visible,
+.footer-logo:focus-visible {
+    outline: 2px solid #b996e8;
+    outline-offset: 4px;
+}
