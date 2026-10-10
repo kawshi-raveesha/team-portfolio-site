@@ -10,6 +10,41 @@
 <body>
 
   <!-- MEMBER 4: HEADER goes here -->
+   <header class="header">
+    <div class="nav-container">
+
+        <a href="#home" class="logo">TeamCode</a>
+
+        <nav class="navbar" id="navbar" aria-label="Main navigation">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#team" class="nav-link">Team</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <button
+                type="button"
+                id="themeToggle"
+                class="theme-btn"
+                aria-label="Toggle dark mode">
+                ☾
+            </button>
+
+            <button
+                type="button"
+                id="menuToggle"
+                class="menu-btn"
+                aria-label="Open menu"
+                aria-controls="navbar"
+                aria-expanded="false">
+                ☰
+            </button>
+        </div>
+
+    </div>
+</header>
+
 
   <main>
     <!-- MEMBER 1: PAGE CONTENT (sections) goes here -->
@@ -288,6 +323,24 @@
   </main>
 
   <!-- MEMBER 4: FOOTER goes here -->
+   <footer class="footer">
+    <div class="footer-content">
+
+        <a href="#home" class="footer-logo">TeamCode</a>
+
+        <p>
+            &copy; <span id="year"></span> TeamCode.
+            All rights reserved.
+        </p>
+
+        <p>
+            COSC 32133 / BECS 32263 - University of Kelaniya
+        </p>
+
+        <a href="#home" class="back-top">Back to top ↑</a>
+
+    </div>
+</footer>
 
   <script src="js/script.js"></script>
 </body>
