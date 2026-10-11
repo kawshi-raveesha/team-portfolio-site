@@ -170,9 +170,10 @@ header h2 {
 }
 
 .primary-btn,
-.hero .btn,
+.hero-btn,
 button[type="submit"] {
     display: inline-block;
+     background-color: #5b008f;
     padding: 7px 14px;
     border: none;
     border-radius: 5px;
